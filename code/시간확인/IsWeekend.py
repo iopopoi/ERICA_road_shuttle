@@ -2,13 +2,9 @@
 
 from datetime import datetime
 
-now = datetime.now()
-
-def IsWeekend(date):
+def IsWeekend():
     week = datetime.today().weekday()
-    if week == 5 or week == 6:
+    if week == 5 or week == 6: #토요일이거나 일요일이면 참
         return True
     else:
         return False
-
-
