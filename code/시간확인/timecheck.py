@@ -1,6 +1,5 @@
 def timecheck(time):
     infile=open("time_shuttle.txt","r")
-    chk_timetable=0
     text=infile.read()
     S=text.partition(":")
     SS=S[2].partition(",")
@@ -14,5 +13,3 @@ def timecheck(time):
         chk_timetable=int(S[0])*60+int(SS[0])
     infile.close()
     return chk_timetable 
-
-print(timecheck(889))

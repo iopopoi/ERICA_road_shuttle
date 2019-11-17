@@ -4,5 +4,3 @@ from datetime import datetime
 def Tominute():
     dminute=datetime.now().hour*60+datetime.now().minute
     return dminute 
-
-Tominute()
