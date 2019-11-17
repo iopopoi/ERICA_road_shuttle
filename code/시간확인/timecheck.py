@@ -1,10 +1,5 @@
-import os
-
 def timecheck(time):
-    now_path = os.path.dirname(__file__)
-    shuttle_time_path = os.path.join(now_path,"time_shuttle.txt")
-
-    infile=open(shuttle_time_path,"r")
+    infile=open("time_shuttle.txt","r")
     text=infile.read()
     S=text.partition(":")
     SS=S[2].partition(",")
