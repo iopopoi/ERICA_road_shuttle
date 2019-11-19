@@ -20,3 +20,22 @@ def IsWeekend(time = -1):
         return True
     else:
         return False
+
+# 주어진 minute을 "00:00"의 형태로 출력해주는 함수
+def minute2time(minute):
+    hour = (int)(((minute-minute%60)/60)%24)
+    mit = minute%60
+    s_hour = str(hour)
+    s_mit = str(mit)
+
+    if hour < 10 : 
+        s_hour = "0" + s_hour
+    if mit < 10 : 
+        s_mit = "0" + s_mit
+
+    return s_hour + ":" + s_mit
+
+
+#시간과 분을 입력받아 분으로 바꾸는 함수
+def Tominute(hour,minute):
+    return hour*60+minute
