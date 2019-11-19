@@ -1,6 +1,4 @@
-# 현재 시간을 입력 받아 분으로 바꾸어주는 함수
-from datetime import datetime
+#시간과 분을 입력받아 분으로 바꾸는 함수
 
-def Tominute():
-    dminute=datetime.now().hour*60+datetime.now().minute
-    return dminute 
+def Tominute(hour,minute):
+    return hour*60+minute;
