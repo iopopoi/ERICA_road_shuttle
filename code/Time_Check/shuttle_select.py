@@ -1,31 +1,29 @@
 import os
 from Date import *
 
+
 def Find_txt_path(time, station, destination):
     txt_path = os.path.dirname(__file__) #현재 경로 저장
     txt_path = os.path.join(txt_path,"timetable")
     
     if IsWeekend(time) == False: # 평일일 때
-        if station == "shuttlecok": #셔틀콕 출발
-            if destination == "subwaystation":#한대앞 도착
-                txt_path = os.path.join(txt_path,"shuttlecok_to_subwaystation_weekday.txt") #텍스트 위치 경로에 추가
-            elif destination == "dom": #긱사 도착
-                txt_path = os.path.join(txt_path,"shuttlecok_to_dom_weekday.txt") #텍스트 위치 경로에 추가
-            else:
-                #txt_path = os.path.join(txt_path,"dom_to_shuttlecok_weekday.txt") #텍스트 위치 경로에 추가
-                return -1
+        txt_path = os.path.join(txt_path,"weekday")
+    else:
+        txt_path = os.path.join(txt_path,"weekend")
 
-    else: # 주말일 때
-        if station == "shuttlecok": #셔틀콕 출발
-            if destination == "subwaystation": #한대앞 도착
-                txt_path = os.path.join(txt_path,"shuttlecok_to_subwaystation_weekend.txt") #텍스트 위치 경로에 추가
-            elif destination == "dom": #긱사 도착
-                txt_path = os.path.join(txt_path,"shuttlecok_to_dom_weekend.txt") #텍스트 위치 경로에 추가
-            else:
-                #txt_path = os.path.join(txt_path,"dom_to_shuttlecok_weekend.txt") #텍스트 위치 경로에 추가
-                return -1
+    
+    if station == "shuttlecok": #셔틀콕 출발
+        if destination == "subwaystation":#한대앞 도착
+            txt_path = os.path.join(txt_path,"shuttlecok_to_subwaystation.txt") #텍스트 위치 경로에 추가
+        elif destination == "dom": #긱사 도착    
+            txt_path = os.path.join(txt_path,"shuttlecok_to_dom")           
+            
+    if station == "dom": #긱사 출발
+        if destination == "shuttlecok": #셔틀콕 도착
+            txt_path = os.path.join(txt_path,"dom_to_shuttlecok.txt")             
     
     return txt_path
+
 
 
 def shuttle_select(time, station, destination):
