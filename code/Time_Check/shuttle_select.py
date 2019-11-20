@@ -46,9 +46,9 @@ def shuttle_select(time, station, destination):
 
         shuttle_time = make_time(int(SS[0]),int(S[0]),time) #셔틀 시간을 날짜 형식으로 바꿈
 
-        if text == "": #모든 셔틀이 떠나갔으면 # 다음 날 첫 셔틀을 알려주는 함수
-            shuttle_select(deltahour(5,time),station,destination) 
-            return -1
+        if text == "": #모든 셔틀이 떠나갔으면 # 다음 날 첫 셔틀을 알려준다
+            return shuttle_select(deltahour(5,time),station,destination)
+            
         
     infile.close()
     return shuttle_time
