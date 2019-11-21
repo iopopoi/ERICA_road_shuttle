@@ -7,7 +7,7 @@ class INPUT_ERROR(Exception): pass
 while True:
     try:
         start_point = int(input("출발지를 입력해주세요 : ")) #출발지를 장소마다 매겨진 번호로 입력
-        if start_point < 1 and start_point > 20:
+        if start_point < 1 or start_point > 20:
             raise INPUT_ERROR
 
     except INPUT_ERROR:
@@ -19,7 +19,7 @@ while True:
 while True:
     try:
         end_point = int(input("도착지를 입력해주세요 : ")) #도착지를 장소마다 매겨진 번호로 입력
-        if end_point < 1 and end_point > 20:
+        if end_point < 1 or end_point > 20:
             raise INPUT_ERROR
 
     except INPUT_ERROR:
