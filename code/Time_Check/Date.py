@@ -29,7 +29,7 @@ def deltaday(delta, start_time = -1): #특정 날짜에서 몇일 전, 후의 �
 def deltaTime(hour,minute,day, start_time = -1): #위의 3가지 함수를 통합한 함수
     if start_time == -1:
         start_time = now()
-    return start_time + timedelta(hours = hour, minute = minute, days= day)
+    return start_time + timedelta(hours = hour, minutes = minute, days= day)
     
 
 def IsWeekend(time = -1): #오늘 날짜를 입력받아 주말인지 판단하는 함수
