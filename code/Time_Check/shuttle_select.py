@@ -50,5 +50,3 @@ def shuttle_select(time, station, destination):
         
     infile.close()
     return shuttle_time
-
-print(shuttle_select(now(),"shuttlecok","subwaystation"))
