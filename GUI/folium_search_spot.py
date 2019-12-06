@@ -2,6 +2,7 @@ import folium
 from folium import plugins
 from folium.plugins import Search
 from latitude_and_longtitude import loca, lati, longti
+from jinja2 import Template
 
 
 points = {
@@ -10,19 +11,12 @@ points = {
         {
             "type": "Feature",
             "properties": {
-                "name": "셔틀콕"
+                "name": "셔틀콕",
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [longti['셔틀콕'], lati['셔틀콕']]
             },
-            "style": {
-                "icon": {
-                    "iconUrl": "http://downloadicons.net/sites/default/files/small-house-with-a-chimney-icon-70053.png",
-                    "iconSize": [1, 1],
-                    "iconAnchor": [8, 8]
-                }
-            }
         },
         {
             "type": "Feature",
@@ -168,23 +162,32 @@ points = {
 }
 
 m = folium.Map(
-    location=[37.298215, 126.837191],
-    zoom_start=16
+    location=[37.296854, 126.836715],
+    min_zoom=13, max_zoom=20,
+    zoom_start=16.5
 )
 
+geojson_obj = folium.GeoJson(points, name="마커 보기").add_to(m)
 
-def style_one(x): return {'fillColor': '#ffdc30'}
 
+for i in points["features"]:
+    lati = i["geometry"]["coordinates"][1]
+    longti = i["geometry"]["coordinates"][0]
+    name = i["properties"]["name"]
+    html = Template("""
+    <h3> {{name}} </h3><br>
+    </p>
+    """).render(name=name) #html 형태로 마커 클릭 시 팝업 추가
 
-geojson_obj = folium.GeoJson(points, style_function=style_one).add_to(m)
+Search(layer=geojson_obj,
+       geom_type='Point',
+       placeholder="장소 검색",
+       search_label='name',
+       search_zoom=17,
+       collapsed=False,
+       position='topright').add_to(m) # 장소 검색 기능 추가
 
-statesearch = Search(layer=geojson_obj,
-                     geom_type='Point',
-                     placeholder="장소 검색",
-                     search_label='name',
-                     search_zoom=16.5,
-                     position='topright'
-                     ).add_to(m)
+plugins.LocateControl().add_to(m) #gps 기능 추가
 
 m.save('example.html')
 m
