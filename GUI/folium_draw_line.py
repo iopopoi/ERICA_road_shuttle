@@ -14,10 +14,15 @@ def draw_path(path_list):
         zoom_start=16.5
     )
 
+    #출도착지 마커 표시
+    folium.Marker(location=coords[0]).add_to(m)
+    folium.Marker(location=coords[len(
+        coords)-1], icon=folium.Icon(color="red", icon='ok-sign')).add_to(m)
+
     plugins.PolyLineOffset(coords, color="#f00",
                            opacity=1, offset=-5).add_to(m)
     m.save('path_line.html')
     return m
 
 
-draw_path([12, 11, 10, 39, 9, 8, 7, 18, 20]) #테스트 코드
+draw_path([12, 11, 10, 39, 9, 8, 7, 18, 20])
