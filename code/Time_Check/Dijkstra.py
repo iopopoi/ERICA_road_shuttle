@@ -33,18 +33,14 @@ def Dijkstra(station, destination):
                     elif vtx == 38:
                         sstation ="dom"
                         if next == 12: ddestination="shuttlecok"
-                    # 한대앞역에서 학교로 오는 부분 구현해야됨
-                    # elif vtx == 43:
-                    #     sstation ="subwaystation"
-                    #     if 12 : ddestination = "shuttlecok"
+                    elif vtx == 43:
+                        sstation ="subwaystation"
+                        if 12 : ddestination = "shuttlecok"
                     shuttle_time = shuttle_select(time, sstation, ddestination)
                     shuttle_time = Tominute(shuttle_time)-Tominute(now())
                     heapq.heappush( heap, ( shuttle_time+tpl[1] , (next , vtx) ) )
-                else :
-                    if building.count(next) > 0 and next != destination:
-                        heapq.heappush( heap, (cnt + tpl[1] +1, (next , vtx)))
-                    else :    
-                        heapq.heappush( heap, (cnt + tpl[1], (next , vtx)))
+                else :    
+                    heapq.heappush( heap, (cnt + tpl[1], (next , vtx)))
     spot_load = []
     s = destination
     while visit_from[s] != s :
