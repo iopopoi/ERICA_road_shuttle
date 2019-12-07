@@ -22,6 +22,10 @@ def Find_txt_path(time, station, destination):
         if destination == "shuttlecok": #셔틀콕 도착
             txt_path = os.path.join(txt_path,"dom_to_shuttlecok.txt")             
     
+    if station == "subwaystation":#한대앞 출발
+        if destination == "shuttlecok":
+            txt_path = os.path.join(txt_path,"subwaystation_to_shuttlecok")
+
     return txt_path
 
 
@@ -33,7 +37,7 @@ def shuttle_select(time, station, destination):
 
     S = text.partition(":")
     SS = S[2].partition(",") 
-    text = SS[2] # 
+    text = SS[2] 
     
     shuttle_time = make_time(int(SS[0]),int(S[0]),time)
 
