@@ -175,9 +175,12 @@ for i in points["features"]:
     longti = i["geometry"]["coordinates"][0]
     name = i["properties"]["name"]
     html = Template("""
-    <h3> {{name}} </h3><br>
+    {{name}}<br>
     </p>
-    """).render(name=name) #html 형태로 마커 클릭 시 팝업 추가
+    """).render(name=name)  # html 형태로 마커 클릭 시 팝업 추가
+    popup = folium.Popup(html, max_width=200)
+    folium.Marker(location=[lati, longti], popup=popup).add_to(
+        m)  # html 형태로 마커 클릭 시 팝업 추가
 
 Search(layer=geojson_obj,
        geom_type='Point',
@@ -185,9 +188,8 @@ Search(layer=geojson_obj,
        search_label='name',
        search_zoom=17,
        collapsed=False,
-       position='topright').add_to(m) # 장소 검색 기능 추가
+       position='topright').add_to(m)  # 장소 검색 기능 추가
 
-plugins.LocateControl().add_to(m) #gps 기능 추가
+plugins.LocateControl().add_to(m)  # gps 기능 추가
 
-m.save('example.html')
-m
+m.save('spot_search.html')
