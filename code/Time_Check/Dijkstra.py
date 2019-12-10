@@ -7,9 +7,8 @@ from datetime import datetime, date, timedelta
 # 셔틀시간을 확인하는 기능 미완성
 def Dijkstra(station, destination):
     heap =[]
-    building=[1,2,23,15,17,24,16,14,13,19,29,35,38,33]
-    visit = [ 0 for i in range(50)]
-    visit_from = [ 0 for i in range(50)]
+    visit = [ 0 for i in range(80)]
+    visit_from = [ 0 for i in range(80)]
     heapq.heappush(heap,( 0 , (station , station) ) )
     visit_from[station]=station
     while heap != []:
@@ -50,5 +49,4 @@ def Dijkstra(station, destination):
     spot_load.reverse()
     return cnt, spot_load
 
-print(Dijkstra(33,43))
 
