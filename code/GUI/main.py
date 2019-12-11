@@ -1,9 +1,12 @@
 import tkinter as tk
-from tkinter import font
-from tkinter import ttk
+from tkinter import font,ttk
 import os
 import webbrowser
 import folium_search_spot
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))) + "\Time_Check")
+import Dijkstra
+import folium_draw_line
 
 window = tk.Tk()
 window.title("ERICA Road Shuttle")
@@ -18,6 +21,22 @@ def view_map_B_event():
 
     webbrowser.open(url)
 
+def View_path():
+    start = start_point.get()
+    end = end_point.get()
+    if start == "출발지 선택":
+        return False
+    if end == "도착지 선택":
+        return False
+    
+    (arrival_time,path_list) = Dijkstra.dijkstra(start,end)
+    print(path_list)
+    folium_draw_line.draw_path(path_list)
+    url = os.path.abspath("")
+    url = os.path.join(url,"path_line.html")
+
+    webbrowser.open(url)
+    
 
 #장소검색 버튼
 font = tk.font.Font(family="맑은 고딕", size=15, weight='bold')  # 폰트
@@ -31,14 +50,19 @@ values = ['셔틀콕', '제1공학관', '제3공학관', '제4공학관',
           '제1학술관', '컨퍼런스홀', '제2과학기술관', '학생복지관',
           '학생회관', '학술정보관', '제5공학관', '창업보육센터',
           '학연산 클러스터', '기숙사 셔틀콕']
-start_point = tk.ttk.Combobox(window, height=20, values=values)
-start_point.place(x=250, y=200)
-start_point.set("           출발지 선택")
+start_point = tk.ttk.Combobox(window, height=20, width = 10, values=values)
+start_point.place(x=210, y=200)
+start_point.set("출발지 선택")
 
 values.append('한대앞역')
-end_point = tk.ttk.Combobox(window, height=20, values=values)
-end_point.place(x=250, y=250)
-end_point.set("           도착지 선택")
+end_point = tk.ttk.Combobox(window, height=20, width = 10, values=values)
+end_point.place(x=310, y=200)
+end_point.set("도착지 선택")
 
+
+#search 버튼
+font = tk.font.Font(family="맑은 고딕", size = 10, weight='bold')
+search = tk.Button(window,text="SEARCH!",font=font,fg='White',bg='Red',command=View_path)
+search.place(x=410,y=195)
 
 tk.mainloop()
