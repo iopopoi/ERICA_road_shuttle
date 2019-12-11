@@ -26,9 +26,23 @@ def dijkstra(start_point, end_point):
         for tpl in spot_list[vtx] :
             next= tpl[0]
             if  visit[next] == 0 :
-                if vtx ==12 or vtx==38 or vtx ==43:
+                if (vtx ==12 or vtx==38 or vtx ==43) and (next == 12 or next == 38 or next == 43):
                     time = deltaTime(((cnt-cnt%60)/60)%24,cnt%60,0)
-                    shuttle_time = shuttle_select(time, start_point, end_point)
+                    if vtx == 12:
+                        sstation = "셔틀콕"
+                        if next == 43:
+                            ddestination = "한대앞역"
+                        elif next == 38:
+                            ddestination = "기숙사 셔틀콕"
+                    elif vtx == 38:
+                        sstation = "기숙사 셔틀콕"
+                        if next == 12:
+                            ddestination = "셔틀콕"
+                    elif vtx == 43:
+                        sstation = "한대앞역"
+                        if 12:
+                            ddestination = "셔틀콕"
+                    shuttle_time = shuttle_select(time, sstation, ddestination)
                     shuttle_time = Tominute(shuttle_time)-Tominute(now())
                     heapq.heappush( heap, ( shuttle_time+tpl[1] , (next , vtx) ) )
                 else :    
