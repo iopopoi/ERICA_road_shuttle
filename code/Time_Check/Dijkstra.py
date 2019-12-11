@@ -28,17 +28,7 @@ def dijkstra(start_point, end_point):
             if  visit[next] == 0 :
                 if vtx ==12 or vtx==38 or vtx ==43:
                     time = deltaTime(((cnt-cnt%60)/60)%24,cnt%60,0)
-                    if vtx == 12 :
-                        sstation ="shuttlecok"
-                        if next == 43 : ddestination="subwaystation"
-                        elif next == 38 : ddestination="dom"
-                    elif vtx == 38:
-                        sstation ="dom"
-                        if next == 12: ddestination="shuttlecok"
-                    elif vtx == 43:
-                        sstation ="subwaystation"
-                        if 12 : ddestination = "shuttlecok"
-                    shuttle_time = shuttle_select(time, sstation, ddestination)
+                    shuttle_time = shuttle_select(time, start_point, end_point)
                     shuttle_time = Tominute(shuttle_time)-Tominute(now())
                     heapq.heappush( heap, ( shuttle_time+tpl[1] , (next , vtx) ) )
                 else :    

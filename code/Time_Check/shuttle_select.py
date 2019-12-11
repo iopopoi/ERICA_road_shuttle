@@ -12,18 +12,18 @@ def Find_txt_path(time, station, destination):
         txt_path = os.path.join(txt_path,"weekend")
 
     
-    if station == "shuttlecok": #셔틀콕 출발
-        if destination == "subwaystation":#한대앞 도착
+    if station == "셔틀콕": #셔틀콕 출발
+        if destination == "한대앞역":#한대앞 도착
             txt_path = os.path.join(txt_path,"shuttlecok_to_subwaystation.txt") #텍스트 위치 경로에 추가
-        elif destination == "dom": #긱사 도착    
+        elif destination == "기숙사 셔틀콕": #긱사 도착    
             txt_path = os.path.join(txt_path,"shuttlecok_to_dom")           
             
-    if station == "dom": #긱사 출발
-        if destination == "shuttlecok": #셔틀콕 도착
+    if station == "기숙사 셔틀콕": #긱사 출발
+        if destination == "셔틀콕": #셔틀콕 도착
             txt_path = os.path.join(txt_path,"dom_to_shuttlecok.txt")             
     
-    if station == "subwaystation":#한대앞 출발
-        if destination == "shuttlecok":
+    if station == "한대앞역":#한대앞 출발
+        if destination == "셔틀콕":
             txt_path = os.path.join(txt_path,"subwaystation_to_shuttlecok")
 
     return txt_path
