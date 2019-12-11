@@ -5,7 +5,10 @@ from shuttle_select import *
 from datetime import datetime, date, timedelta
 
 # 셔틀시간을 확인하는 기능 미완성
-def Dijkstra(station, destination):
+def Dijkstra(start_point, end_point):
+    station = D_building[start_point]
+    destination = D_building[end_point]
+
     heap =[]
     visit = [ 0 for i in range(80)]
     visit_from = [ 0 for i in range(80)]
