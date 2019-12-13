@@ -34,6 +34,11 @@ def View_path():
     
     (arrival_time,path_list) = Dijkstra.dijkstra(start,end)
 
+def open_html():
+    url = os.path.abspath("")
+    url = os.path.join(url,"path_line.html")
+    webbrowser.open(url)
+
 # 도착시간을 알려주는 label 추가
     arrive_time = math.ceil(arrival_time)
     hour = (arrive_time-arrive_time%60)/60
@@ -43,13 +48,11 @@ def View_path():
     arrive_label.place(x=162,y=240)
 
 # 경로를 알려주는 web을 여는 버튼 추가
-    way = tk.Button(window,text="!! Go To Check !!",font = ("맑은 고딕",15) , relief = "solid" ,fg = 'Green',bg = 'white' , width = 25 , height = 1 )
+    way = tk.Button(window,text="!! Go To Check !!",font = ("맑은 고딕",15) , relief = "solid" ,fg = 'Green',bg = 'white' , width = 25 , height = 1 , commend =open_html )
     way.place(x=200,y=300)
     folium_draw_line.draw_path(path_list)
-    url = os.path.abspath("")
-    url = os.path.join(url,"path_line.html")
 
-    webbrowser.open(url)
+
     
 
 
