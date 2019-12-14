@@ -19,7 +19,7 @@ def draw_path(path_list):
     folium.Marker(location=coords[len(
         coords)-1], icon=folium.Icon(color="red", icon='ok-sign')).add_to(m)
 
-    plugins.PolyLineOffset(coords, dash_array ="5,15",color="#f00",
+    plugins.PolyLineOffset(coords, dash_array="5,15", color="#f00",
                            opacity=1, offset=-5).add_to(m)
     m.save('path_line.html')
     return m
