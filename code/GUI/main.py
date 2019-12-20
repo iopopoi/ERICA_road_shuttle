@@ -71,12 +71,11 @@ view_map_B.place(x=210, y=100, width=265, height=50)  # 라벨 위치 및 크기
 values = ['셔틀콕', '제1공학관', '제3공학관', '제4공학관',
           '제1학술관', '컨퍼런스홀', '제2과학기술관', '학생복지관',
           '학생회관', '학술정보관', '제5공학관', '창업보육센터',
-          '학연산 클러스터', '기숙사 셔틀콕']
+          '학연산 클러스터', '기숙사 셔틀콕','한대앞역']
 start_point = tk.ttk.Combobox(window, height=20, width=10, values=values)
 start_point.place(x=210, y=190)
 start_point.set("출발지 선택")
 
-values.append('한대앞역')
 end_point = tk.ttk.Combobox(window, height=20, width=10, values=values)
 end_point.place(x=310, y=190)
 end_point.set("도착지 선택")
