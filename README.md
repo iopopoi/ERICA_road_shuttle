@@ -3,13 +3,31 @@
 # What's this?
 ====
 한양대학교 ERICA 셔틀버스를 고려한 Road Map 개발 프로젝트 
-이동수단에 한양대학교 ERICA 캠퍼스 셔틀버스를 추가하여 몇가지 경로의 도착 예정 시간을 알려주는 프로그램 만들기 by python
+이동수단에 한양대학교 ERICA 캠퍼스 셔틀버스를 추가하여 몇가지 경로의 도착 예정 시간을 알려주는 프로그램
 ___
 
 ## 1. How to use !
 
 
 #### 1) 프로그램 시작
+
+##### - 윈도우:
+
+###### 1. 상단에 release를 클릭하여 파일을 다운로드 합니다.
+
+###### 2. 압축을 풀고 폴더 안에 main.exe를 실행합니다.
+
+##### - 리눅스:
+
+###### 1. $ pip install folium
+
+###### 2. $ git clone git@github.com:iopopoi/ERICA_road_shuttle.git
+
+###### 3. $ cd ERICA_road_shuttle
+
+###### 4. $ cd code
+
+###### 5. $ python main.py
 
 # 나중에 추가>>>>>시작을 위해 필요한 경로를 써줍시다.
 
