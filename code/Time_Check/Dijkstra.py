@@ -4,7 +4,19 @@ from Date import *
 from shuttle_select import *
 from datetime import datetime, date, timedelta
 
-# 셔틀시간을 확인하는 기능 미완성
+
+# 셔틀콕을 탈 경우에 거치는 경로 추가
+def plus_shuttle_road(spot_list):
+    n=len(spot_list)
+    print(n)
+    for i in range(1,n,1):
+        if spot_list[i-1]==12 and spot_list[i]==38:
+            spot_list=spot_list[:i]+[78,37,76,77]+spot_list[:i-1]
+        elif spot_list[i-1]==38 and spot_list[i]==12:
+            spot_list=spot_list[:i]+[77,76,37,78]+spot_list[:i-1]
+    return spot_list
+    
+
 def dijkstra(start_point, end_point):
     station = D_building[start_point]
     destination = D_building[end_point]
@@ -54,6 +66,5 @@ def dijkstra(start_point, end_point):
         s=visit_from[s]
     spot_load.append(station)
     spot_load.reverse()
+    spot_load=plus_shuttle_road(spot_load)
     return cnt, spot_load
-
-
