@@ -16,7 +16,7 @@ def Find_txt_path(time, station, destination):
         if destination == "한대앞역":#한대앞 도착
             txt_path = os.path.join(txt_path,"shuttlecok_to_subwaystation.txt") #텍스트 위치 경로에 추가
         elif destination == "기숙사 셔틀콕": #긱사 도착    
-            txt_path = os.path.join(txt_path,"shuttlecok_to_dom")           
+            txt_path = os.path.join(txt_path,"shuttlecok_to_dom.txt")           
             
     if station == "기숙사 셔틀콕": #긱사 출발
         if destination == "셔틀콕": #셔틀콕 도착
@@ -24,7 +24,7 @@ def Find_txt_path(time, station, destination):
     
     if station == "한대앞역":#한대앞 출발
         if destination == "셔틀콕":
-            txt_path = os.path.join(txt_path,"subwaystation_to_shuttlecok")
+            txt_path = os.path.join(txt_path,"subwaystation_to_shuttlecok.txt")
 
     return txt_path
 
