@@ -13,7 +13,7 @@ window = tk.Tk()
 window.title("ERICA Road Shuttle")
 window.geometry('650x500+500+200')  # 창 크기, 위치
 window.configure(background='White')  # 바탕 색
-
+window.resizable(0,0)
 
 #장소검색 버튼을 누르면 실행되는 함수
 def view_map_B_event():
