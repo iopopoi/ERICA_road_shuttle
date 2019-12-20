@@ -11,9 +11,9 @@ def plus_shuttle_road(spot_list):
     print(n)
     for i in range(1,n,1):
         if spot_list[i-1]==12 and spot_list[i]==38:
-            spot_list=spot_list[:i]+[78,37,76,77]+spot_list[:i-1]
+            spot_list=spot_list[:i]+[78,37,76,77]+spot_list[i:]
         elif spot_list[i-1]==38 and spot_list[i]==12:
-            spot_list=spot_list[:i]+[77,76,37,78]+spot_list[:i-1]
+            spot_list=spot_list[:i]+[77,76,37,78]+spot_list[i:]
     return spot_list
     
 
