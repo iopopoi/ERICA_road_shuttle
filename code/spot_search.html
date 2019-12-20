@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9b7b2aa9b97f41c4b98ae91efbf17de8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_9b7b2aa9b97f41c4b98ae91efbf17de8" ></div>
+        
+</body>
+<script>    
+    
+            var map_9b7b2aa9b97f41c4b98ae91efbf17de8 = L.map(
+                "map_9b7b2aa9b97f41c4b98ae91efbf17de8",
+                {
+                    center: [37.296854, 126.836715],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 16.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fa7e1c76dca6487da3359f6ead11bf34 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 13, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        function geo_json_6ed068c2c1f54620b9b5c8b013d1ae85_onEachFeature(feature, layer) {
+            layer.on({
+                click: function(e) {
+                    map_9b7b2aa9b97f41c4b98ae91efbf17de8.fitBounds(e.target.getBounds());
+                }
+            });
+        };
+        var geo_json_6ed068c2c1f54620b9b5c8b013d1ae85 = L.geoJson(null, {
+                onEachFeature: geo_json_6ed068c2c1f54620b9b5c8b013d1ae85_onEachFeature,
+            
+        });
+        function geo_json_6ed068c2c1f54620b9b5c8b013d1ae85_add (data) {
+            geo_json_6ed068c2c1f54620b9b5c8b013d1ae85.addData(data)
+                .addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        }
+            geo_json_6ed068c2c1f54620b9b5c8b013d1ae85_add({"features": [{"geometry": {"coordinates": [126.838021, 37.298748], "type": "Point"}, "properties": {"name": "\uc154\ud2c0\ucf55"}, "type": "Feature"}, {"geometry": {"coordinates": [126.837431, 37.297579], "type": "Point"}, "properties": {"name": "\uc81c1\uacf5\ud559\uad00"}, "type": "Feature"}, {"geometry": {"coordinates": [126.836229, 37.297442], "type": "Point"}, "properties": {"name": "\uc81c3\uacf5\ud559\uad00 "}, "type": "Feature"}, {"geometry": {"coordinates": [126.83625, 37.296845], "type": "Point"}, "properties": {"name": "\uc81c4\uacf5\ud559\uad00 "}, "type": "Feature"}, {"geometry": {"coordinates": [126.837381, 37.296884], "type": "Point"}, "properties": {"name": "\uc81c5\uacf5\ud559\uad00 "}, "type": "Feature"}, {"geometry": {"coordinates": [126.83683, 37.29903], "type": "Point"}, "properties": {"name": "\ucee8\ud37c\ub7f0\uc2a4\ud640"}, "type": "Feature"}, {"geometry": {"coordinates": [126.838883, 37.296398], "type": "Point"}, "properties": {"name": "\ud559\uc5f0\uc0b0 \ud074\ub7ec\uc2a4\ud130 "}, "type": "Feature"}, {"geometry": {"coordinates": [126.837216, 37.298603], "type": "Point"}, "properties": {"name": "\uc81c2\uacfc\ud559\uae30\uc220\uad00 "}, "type": "Feature"}, {"geometry": {"coordinates": [126.835864, 37.298245], "type": "Point"}, "properties": {"name": "\uc81c1\ud559\uc220\uad00"}, "type": "Feature"}, {"geometry": {"coordinates": [126.834437, 37.298023], "type": "Point"}, "properties": {"name": "\ud559\uc0dd\ubcf5\uc9c0\uad00"}, "type": "Feature"}, {"geometry": {"coordinates": [126.834737, 37.297468], "type": "Point"}, "properties": {"name": "\ud559\uc0dd\ud68c\uad00"}, "type": "Feature"}, {"geometry": {"coordinates": [126.835214, 37.296775], "type": "Point"}, "properties": {"name": "\ud559\uc220\uc815\ubcf4\uad00"}, "type": "Feature"}, {"geometry": {"coordinates": [126.835827, 37.293088], "type": "Point"}, "properties": {"name": "\uae30\uc219\uc0ac \uc154\ud2c0\ucf55"}, "type": "Feature"}, {"geometry": {"coordinates": [126.837231, 37.295587], "type": "Point"}, "properties": {"name": "\ucc3d\uc5c5\ubcf4\uc721\uc13c\ud130"}, "type": "Feature"}, {"geometry": {"coordinates": [126.853635, 37.309642], "type": "Point"}, "properties": {"name": "\ud55c\ub300\uc55e\uc5ed"}, "type": "Feature"}], "type": "FeatureCollection"});
+        
+    
+            var marker_451fce01742e40bf9a68f2a5ebebde7b = L.marker(
+                [37.298748, 126.838021],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_f927876618c34724a104b3c40fbd3ac4 = L.popup({"maxWidth": 200});
+
+        
+            var html_2fbbd41d76884538970b647d5a1f8ee0 = $(`<div id="html_2fbbd41d76884538970b647d5a1f8ee0" style="width: 100.0%; height: 100.0%;">     셔틀콕<br>     </p>     </div>`)[0];
+            popup_f927876618c34724a104b3c40fbd3ac4.setContent(html_2fbbd41d76884538970b647d5a1f8ee0);
+        
+
+        marker_451fce01742e40bf9a68f2a5ebebde7b.bindPopup(popup_f927876618c34724a104b3c40fbd3ac4)
+        ;
+
+        
+    
+    
+            var marker_40493a5b556a41fbb884d4accd288fe9 = L.marker(
+                [37.297579, 126.837431],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_c65f2c72aa944a62ba38b34c6c274e9d = L.popup({"maxWidth": 200});
+
+        
+            var html_ccf0940b93de462ba6431c316cc3f9c6 = $(`<div id="html_ccf0940b93de462ba6431c316cc3f9c6" style="width: 100.0%; height: 100.0%;">     제1공학관<br>     </p>     </div>`)[0];
+            popup_c65f2c72aa944a62ba38b34c6c274e9d.setContent(html_ccf0940b93de462ba6431c316cc3f9c6);
+        
+
+        marker_40493a5b556a41fbb884d4accd288fe9.bindPopup(popup_c65f2c72aa944a62ba38b34c6c274e9d)
+        ;
+
+        
+    
+    
+            var marker_b4d0a7e86d1b4cabb4398461f21e8a28 = L.marker(
+                [37.297442, 126.836229],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_6d9028c9a0424fca9736c4cc7bf5ed5a = L.popup({"maxWidth": 200});
+
+        
+            var html_abe37376b0024ebd9bfc91952f25cd8c = $(`<div id="html_abe37376b0024ebd9bfc91952f25cd8c" style="width: 100.0%; height: 100.0%;">     제3공학관 <br>     </p>     </div>`)[0];
+            popup_6d9028c9a0424fca9736c4cc7bf5ed5a.setContent(html_abe37376b0024ebd9bfc91952f25cd8c);
+        
+
+        marker_b4d0a7e86d1b4cabb4398461f21e8a28.bindPopup(popup_6d9028c9a0424fca9736c4cc7bf5ed5a)
+        ;
+
+        
+    
+    
+            var marker_f7c3e8d01f0e4ac6bd931201323cb2d1 = L.marker(
+                [37.296845, 126.83625],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_731c4c76b8a44ca2a1f1160f92453afd = L.popup({"maxWidth": 200});
+
+        
+            var html_9741fcc99a7344009c72372670d0d87a = $(`<div id="html_9741fcc99a7344009c72372670d0d87a" style="width: 100.0%; height: 100.0%;">     제4공학관 <br>     </p>     </div>`)[0];
+            popup_731c4c76b8a44ca2a1f1160f92453afd.setContent(html_9741fcc99a7344009c72372670d0d87a);
+        
+
+        marker_f7c3e8d01f0e4ac6bd931201323cb2d1.bindPopup(popup_731c4c76b8a44ca2a1f1160f92453afd)
+        ;
+
+        
+    
+    
+            var marker_a8c409bf76e84519b5d5468ceee93036 = L.marker(
+                [37.296884, 126.837381],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_c37f502363d248e0b971d48884a601bf = L.popup({"maxWidth": 200});
+
+        
+            var html_8418e1a1a7f544d392141e4e042414d9 = $(`<div id="html_8418e1a1a7f544d392141e4e042414d9" style="width: 100.0%; height: 100.0%;">     제5공학관 <br>     </p>     </div>`)[0];
+            popup_c37f502363d248e0b971d48884a601bf.setContent(html_8418e1a1a7f544d392141e4e042414d9);
+        
+
+        marker_a8c409bf76e84519b5d5468ceee93036.bindPopup(popup_c37f502363d248e0b971d48884a601bf)
+        ;
+
+        
+    
+    
+            var marker_371d3132508d4809a12d817a811c9109 = L.marker(
+                [37.29903, 126.83683],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_4aef58246f104e6abec083b8854258c2 = L.popup({"maxWidth": 200});
+
+        
+            var html_e406873113a3414ab1a892041f10eef6 = $(`<div id="html_e406873113a3414ab1a892041f10eef6" style="width: 100.0%; height: 100.0%;">     컨퍼런스홀<br>     </p>     </div>`)[0];
+            popup_4aef58246f104e6abec083b8854258c2.setContent(html_e406873113a3414ab1a892041f10eef6);
+        
+
+        marker_371d3132508d4809a12d817a811c9109.bindPopup(popup_4aef58246f104e6abec083b8854258c2)
+        ;
+
+        
+    
+    
+            var marker_f8827ffb5de44beb8cd2f1a468afcdd0 = L.marker(
+                [37.296398, 126.838883],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_b075372960844050b10eaba35b6dc36b = L.popup({"maxWidth": 200});
+
+        
+            var html_754ab4068daf4d10864a23ff45b89481 = $(`<div id="html_754ab4068daf4d10864a23ff45b89481" style="width: 100.0%; height: 100.0%;">     학연산 클러스터 <br>     </p>     </div>`)[0];
+            popup_b075372960844050b10eaba35b6dc36b.setContent(html_754ab4068daf4d10864a23ff45b89481);
+        
+
+        marker_f8827ffb5de44beb8cd2f1a468afcdd0.bindPopup(popup_b075372960844050b10eaba35b6dc36b)
+        ;
+
+        
+    
+    
+            var marker_9b799211764444efaa4058b5dc7776b9 = L.marker(
+                [37.298603, 126.837216],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_b91fea3989da42f885e0e985a3fa657c = L.popup({"maxWidth": 200});
+
+        
+            var html_a1c13e4c2dbf463b88150cb968346725 = $(`<div id="html_a1c13e4c2dbf463b88150cb968346725" style="width: 100.0%; height: 100.0%;">     제2과학기술관 <br>     </p>     </div>`)[0];
+            popup_b91fea3989da42f885e0e985a3fa657c.setContent(html_a1c13e4c2dbf463b88150cb968346725);
+        
+
+        marker_9b799211764444efaa4058b5dc7776b9.bindPopup(popup_b91fea3989da42f885e0e985a3fa657c)
+        ;
+
+        
+    
+    
+            var marker_8e8c9a8e7ed647e0adbd73eb0c256007 = L.marker(
+                [37.298245, 126.835864],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_eb98dfd181f8494a81784bac7fa0fba9 = L.popup({"maxWidth": 200});
+
+        
+            var html_a7e5f9b1351e40268f222c2cec5b03c1 = $(`<div id="html_a7e5f9b1351e40268f222c2cec5b03c1" style="width: 100.0%; height: 100.0%;">     제1학술관<br>     </p>     </div>`)[0];
+            popup_eb98dfd181f8494a81784bac7fa0fba9.setContent(html_a7e5f9b1351e40268f222c2cec5b03c1);
+        
+
+        marker_8e8c9a8e7ed647e0adbd73eb0c256007.bindPopup(popup_eb98dfd181f8494a81784bac7fa0fba9)
+        ;
+
+        
+    
+    
+            var marker_b6bbb0da52944d9caef0eaac3c972e07 = L.marker(
+                [37.298023, 126.834437],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_cf5b92718c5344bb9355c4c6b6f5ff92 = L.popup({"maxWidth": 200});
+
+        
+            var html_b5befb9c8be64cb29c895aaf4f014625 = $(`<div id="html_b5befb9c8be64cb29c895aaf4f014625" style="width: 100.0%; height: 100.0%;">     학생복지관<br>     </p>     </div>`)[0];
+            popup_cf5b92718c5344bb9355c4c6b6f5ff92.setContent(html_b5befb9c8be64cb29c895aaf4f014625);
+        
+
+        marker_b6bbb0da52944d9caef0eaac3c972e07.bindPopup(popup_cf5b92718c5344bb9355c4c6b6f5ff92)
+        ;
+
+        
+    
+    
+            var marker_453cc545290e490dbe716963841244ec = L.marker(
+                [37.297468, 126.834737],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_dad7c99c7ba74a6a9018da02faf7e970 = L.popup({"maxWidth": 200});
+
+        
+            var html_e52882a6b39349a38dc0646696186b27 = $(`<div id="html_e52882a6b39349a38dc0646696186b27" style="width: 100.0%; height: 100.0%;">     학생회관<br>     </p>     </div>`)[0];
+            popup_dad7c99c7ba74a6a9018da02faf7e970.setContent(html_e52882a6b39349a38dc0646696186b27);
+        
+
+        marker_453cc545290e490dbe716963841244ec.bindPopup(popup_dad7c99c7ba74a6a9018da02faf7e970)
+        ;
+
+        
+    
+    
+            var marker_d0da98e6691440ddb564d176eb0e2da4 = L.marker(
+                [37.296775, 126.835214],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_1d0874896b274890bd6345a55fe046ef = L.popup({"maxWidth": 200});
+
+        
+            var html_d412ae2878bb4ffb945c589b7ce94c1a = $(`<div id="html_d412ae2878bb4ffb945c589b7ce94c1a" style="width: 100.0%; height: 100.0%;">     학술정보관<br>     </p>     </div>`)[0];
+            popup_1d0874896b274890bd6345a55fe046ef.setContent(html_d412ae2878bb4ffb945c589b7ce94c1a);
+        
+
+        marker_d0da98e6691440ddb564d176eb0e2da4.bindPopup(popup_1d0874896b274890bd6345a55fe046ef)
+        ;
+
+        
+    
+    
+            var marker_ff40299850e04e04b3a0c584027f4bcb = L.marker(
+                [37.293088, 126.835827],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_7de019b85dc440988e0629b9d67576da = L.popup({"maxWidth": 200});
+
+        
+            var html_d8919ee2ce5640d09cd9371b23aa6d62 = $(`<div id="html_d8919ee2ce5640d09cd9371b23aa6d62" style="width: 100.0%; height: 100.0%;">     기숙사 셔틀콕<br>     </p>     </div>`)[0];
+            popup_7de019b85dc440988e0629b9d67576da.setContent(html_d8919ee2ce5640d09cd9371b23aa6d62);
+        
+
+        marker_ff40299850e04e04b3a0c584027f4bcb.bindPopup(popup_7de019b85dc440988e0629b9d67576da)
+        ;
+
+        
+    
+    
+            var marker_87493daf9a084c4eac0c51fe077c63c6 = L.marker(
+                [37.295587, 126.837231],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_06147e0973ce414488b2e489ac05857e = L.popup({"maxWidth": 200});
+
+        
+            var html_aad2863f9fea453f9fc37b2a1b2675fe = $(`<div id="html_aad2863f9fea453f9fc37b2a1b2675fe" style="width: 100.0%; height: 100.0%;">     창업보육센터<br>     </p>     </div>`)[0];
+            popup_06147e0973ce414488b2e489ac05857e.setContent(html_aad2863f9fea453f9fc37b2a1b2675fe);
+        
+
+        marker_87493daf9a084c4eac0c51fe077c63c6.bindPopup(popup_06147e0973ce414488b2e489ac05857e)
+        ;
+
+        
+    
+    
+            var marker_39727751639b4db68ba36ef14b95e48a = L.marker(
+                [37.309642, 126.853635],
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+    
+        var popup_65f7c7109ed143e684ee6572b53b1381 = L.popup({"maxWidth": 200});
+
+        
+            var html_a901b37259f64877b7f1ff657cc4b43c = $(`<div id="html_a901b37259f64877b7f1ff657cc4b43c" style="width: 100.0%; height: 100.0%;">     한대앞역<br>     </p>     </div>`)[0];
+            popup_65f7c7109ed143e684ee6572b53b1381.setContent(html_a901b37259f64877b7f1ff657cc4b43c);
+        
+
+        marker_39727751639b4db68ba36ef14b95e48a.bindPopup(popup_65f7c7109ed143e684ee6572b53b1381)
+        ;
+
+        
+    
+    
+            var geo_json_6ed068c2c1f54620b9b5c8b013d1ae85searchControl = new L.Control.Search({
+                layer: geo_json_6ed068c2c1f54620b9b5c8b013d1ae85,
+                
+                propertyName: 'name',
+                
+                collapsed: false,
+                textPlaceholder: '장소 검색',
+            
+                initial: false,
+                
+                zoom: 17,
+                
+                position:'topright',
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_6ed068c2c1f54620b9b5c8b013d1ae85searchControl.on('search:locationfound', function(e) {
+                    geo_json_6ed068c2c1f54620b9b5c8b013d1ae85.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_6ed068c2c1f54620b9b5c8b013d1ae85searchControl.on('search:collapsed', function(e) {
+                        geo_json_6ed068c2c1f54620b9b5c8b013d1ae85.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_9b7b2aa9b97f41c4b98ae91efbf17de8.addControl( geo_json_6ed068c2c1f54620b9b5c8b013d1ae85searchControl );
+
+        
+    
+            var locate_control_bc02910d744e4c8d9bb0cd3e92bf07e8 = L.control.locate(
+                {}
+            ).addTo(map_9b7b2aa9b97f41c4b98ae91efbf17de8);
+        
+</script>
