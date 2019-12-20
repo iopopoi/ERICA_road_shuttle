@@ -7,14 +7,30 @@ from datetime import datetime, date, timedelta
 
 # 셔틀콕을 탈 경우에 거치는 경로 추가
 def plus_shuttle_road(spot_list):
+    bus = [12,43,38]
+
+    start_bus = 0, end_bus = 0
+    for i in range(1,len(spot_list)):
+        if i+1 < len(spot_list) and (spot_list[i] in bus) and (spot_list[i+1] in bus):
+            if start_bus == 0:
+                start_bus = i
+            end_bus = i+1
+        
+    if start_bus != 0 and end_bus != 0:
+        if end_bus < len(spot_list):
+            spot_list = spot_list[:start_bus] + [0] + spot_list[start_bus:end_bus+1] + [0] + spot_list[end_bus+1:]
+        else:
+            spot_list =  spot_list[:start_bus] + [0] + spot_list[start_bus:end_bus+1] + [0]
+    
+
     n=len(spot_list)
-    print(n)
     for i in range(1,n,1):
         if spot_list[i-1]==12 and spot_list[i]==38:
             spot_list=spot_list[:i]+[78,37,76,77]+spot_list[i:]
         elif spot_list[i-1]==38 and spot_list[i]==12:
             spot_list=spot_list[:i]+[77,76,37,78]+spot_list[i:]
     return spot_list
+    
     
 
 def dijkstra(start_point, end_point):
