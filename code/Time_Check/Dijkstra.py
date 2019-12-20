@@ -8,15 +8,15 @@ from datetime import datetime, date, timedelta
 # 셔틀콕을 탈 경우에 거치는 경로 추가
 def plus_shuttle_road(spot_list):
     bus = [12,43,38]
-
-    start_bus = 0, end_bus = 0
-    for i in range(1,len(spot_list)):
+    start_bus = -1
+    end_bus = -1
+    for i in range(0,len(spot_list)-1):
         if i+1 < len(spot_list) and (spot_list[i] in bus) and (spot_list[i+1] in bus):
-            if start_bus == 0:
+            if start_bus == -1:
                 start_bus = i
             end_bus = i+1
         
-    if start_bus != 0 and end_bus != 0:
+    if start_bus != -1 and end_bus != -1:
         if end_bus < len(spot_list):
             spot_list = spot_list[:start_bus] + [0] + spot_list[start_bus:end_bus+1] + [0] + spot_list[end_bus+1:]
         else:
